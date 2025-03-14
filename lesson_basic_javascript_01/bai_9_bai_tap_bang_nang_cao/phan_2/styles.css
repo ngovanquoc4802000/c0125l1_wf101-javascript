@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.calendar {
+  width: 400px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.calendar-title {
+  text-align: center;
+  color: blue;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.calendar-table th {
+  background-color: #f0f0f0;
+}
+
+.calendar-table th:first-child,
+.calendar-table td:first-child {
+  background-color: red;
+  color: white;
+}
+
+.calendar-table th:last-child,
+.calendar-table td:last-child {
+  background-color: blue;
+  color: white;
+}
+
+.calendar-table .subscript {
+  font-size: 0.7em;
+  vertical-align: super;
+}
+
+.calendar-table tr:nth-child(even) td:nth-child(odd),
+.calendar-table tr:nth-child(odd) td:nth-child(even) {
+  background-color: #f0f0f0;
+}
