@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.schedule-container {
+  width: 800px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.schedule-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: blue;
+}
+
+.schedule-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.info-left,
+.info-right {
+  flex: 1;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.schedule-table th {
+  background-color: #f0f0f0;
+}
+
+.schedule-table th:nth-child(4),
+.schedule-table th:nth-child(5),
+.schedule-table th:nth-child(6) {
+  background-color: yellow;
+}
+
+.schedule-table tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.schedule-table tr:nth-child(even) {
+  background-color: #e0f2f7;
+}
