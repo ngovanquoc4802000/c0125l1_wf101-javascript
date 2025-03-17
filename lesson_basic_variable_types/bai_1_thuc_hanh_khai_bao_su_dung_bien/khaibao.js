@@ -24,3 +24,4 @@ let widthThree = 20;
 let heightThree = 10;
 let areaThree = width * height;
 document.write("Area = " + area);
+console.log("1" + 2 + 4)
