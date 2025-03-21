@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const data = [
+      { donGia: 1893, sanLuong: 50 },
+      { donGia: 1956, sanLuong: 50 },
+      { donGia: 2271, sanLuong: 100 },
+      { donGia: 2860, sanLuong: 100 },
+      { donGia: 3197, sanLuong: 100 },
+      { donGia: 3302, sanLuong: 0 },
+    ];
+
+    function tinhThanhTien(data) {
+      const ketQua = data.map((item, index) => {
+        const thanhTien = item.donGia * item.sanLuong;
+        return {
+          bacThang: index + 1,
+          donGia: item.donGia,
+          sanLuong: item.sanLuong,
+          thanhTien: thanhTien,
+        };
+      });
+      return ketQua;
+    }
+
+    const ketQuaTinhTien = tinhThanhTien(data);
+
+    console.log("Kết quả tính tiền điện:");
+    ketQuaTinhTien.forEach((item) => {
+      console.log(
+        `Bậc thang ${item.bacThang.toLocaleString("vi-VN")}: ${item.thanhTien.toLocaleString("vi-VN")} đồng`
+      );
+    });
+
+    // Tính tổng tiền điện
+    const tongTienDien = ketQuaTinhTien.reduce((tong, item) => tong + item.thanhTien, 0);
+    console.log(`Tổng tiền điện: ${tongTienDien.toLocaleString("vi-VN")} đồng`);
+
+  </script>
+</body>
+
+</html>

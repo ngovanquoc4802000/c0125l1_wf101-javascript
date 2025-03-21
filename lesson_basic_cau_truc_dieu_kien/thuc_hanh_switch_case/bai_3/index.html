@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chiều cao cân nặng</title>
+
+</head>
+
+<body>
+  <script>
+    const tinhBMI = (chieuCao, canNang) => {
+      
+      // Kiểm tra tính hợp lệ của dữ liệu đầu vào
+      
+      if (chieuCao <= 0 || canNang <= 0) {
+        return "Chiều cao và cân nặng phải lớn hơn 0.";
+      }
+
+      // Chuyển đổi chiều cao từ cm sang mét
+      const chieuCaoMet = chieuCao / 100;
+
+      // Tính BMI theo công thức: BMI = cân nặng / (chiều cao * chiều cao)
+      const bmi = canNang / (chieuCaoMet * chieuCaoMet);
+
+      // Làm tròn kết quả đến 2 chữ số thập phân
+      return bmi.toFixed(2);
+    }
+
+    // Lấy dữ liệu từ người dùng
+    const chieuCaoNguoiDung = parseFloat(prompt("Nhập chiều cao của bạn (cm): "));
+    const canNangNguoiDung = parseFloat(prompt("Nhập cân nặng của bạn (kg): "));
+
+    // Kiểm tra xem dữ liệu nhập có hợp lệ không
+    if (isNaN(chieuCaoNguoiDung) || isNaN(canNangNguoiDung)) {
+
+      console.log("Dữ liệu nhập không hợp lệ. Vui lòng nhập số.");
+    
+    } else {
+
+      // Tính BMI
+      const ketQuaBMI = tinhBMI(chieuCaoNguoiDung, canNangNguoiDung);
+
+      // Hiển thị kết quả
+      if (typeof ketQuaBMI === 'string') {
+    
+        console.log(ketQuaBMI); // In ra thông báo lỗi nếu có
+    
+      } else {
+        console.log(`Chỉ số BMI của bạn là: ${ketQuaBMI}`);
+
+        // Phân loại BMI
+        if (ketQuaBMI < 18.5) {
+    
+          console.log("Bạn đang thiếu cân.");
+    
+        } else if (ketQuaBMI < 25) {
+    
+          console.log("Bạn có cân nặng bình thường.");
+    
+        } else if (ketQuaBMI < 30) {
+    
+          console.log("Bạn đang thừa cân.");
+    
+        } else {
+    
+          console.log("Bạn đang béo phì.");
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
