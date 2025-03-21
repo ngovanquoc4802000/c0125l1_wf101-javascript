@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    Bài 2: Viết chương trình nhập vào giá trị cho chuỗi message. 
+
+    Nếu giá trị nhập vào là Employee thì hiển thị chuỗi Hello.
+
+    Còn lại nếu giá trị nhập vào là Director thì hiển thị chuỗi Greetings
+
+    Còn lại nếu giá trị nhập vào chuỗi rỗng thì hiển thị No login
+
+    Còn lại hiển thị chuỗi rỗng
+ */
+    const value = prompt('Please inter message', "")
+    const result = value === "Employee" ? console.log("Hello") : value === "Director" ? console.log("Greetings") : console.log("No Login") ? console.log("chuoi rong") : "";
+  </script>
+</body>
+
+</html>
