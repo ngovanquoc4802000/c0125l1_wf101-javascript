@@ -20,11 +20,11 @@
 
     function tinhThanhTien(data) {
       const ketQua = data.map((item, index) => {
-        const thanhTien = item.donGia * item.sanLuong;
+        const thanhTien = parseFloat(item.donGia) * parseFloat(item.sanLuong);
         return {
           bacThang: index + 1,
-          donGia: item.donGia,
-          sanLuong: item.sanLuong,
+          donGia: parseFloat(item.donGia),
+          sanLuong: parseFloat(item.sanLuong),
           thanhTien: thanhTien,
         };
       });
