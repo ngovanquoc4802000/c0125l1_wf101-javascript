@@ -27,7 +27,8 @@
       const width = +document.getElementById("weight").value;
       const height = +document.getElementById("height").value;
       if (isNaN(width) || isNaN(height)) {
-        console.log("phai la so")
+        alert('không phải là số')
+        return;
       }
       const tinhBMI = parseFloat(width / (height * 2));
       let result = "";
