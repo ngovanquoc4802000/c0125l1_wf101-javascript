@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sự kiện click bàn phím</title>
+</head>
+
+<body onload="docReady()">
+  <img id="huynhthinhung" style="object-fit: cover; position: absolute; left: 0; top: 0;"
+    src="https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-1/472382061_122190425012220488_3190707337445926265_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_ohc=tv9YeFj-4dYQ7kNvgEIoLFY&_nc_oc=Adn4jnY28DUfH8ExYtr3EpUbQZLlpC4Vs3lx1Y0V90Uy4DUn0Bbu0cS0-9pqO9CFdis&_nc_zt=24&_nc_ht=scontent.fdad3-4.fna&_nc_gid=5Qx0nRLrUHQevOYgZIPteg&oh=00_AYECr0x1QSR58RTlPS_bqoXMNGmsAUYtu_sIcwz46v_Qwg&oe=67E49672"
+    alt="" width="200" height="300">
+  <script>
+    function upArrowFunction() {
+      var name = document.getElementById("huynhthinhung");
+      name.style.top = parseInt(name.style.top) - 10 + "px";
+    }
+    function downArrowFunction() {
+      var name = document.getElementById("huynhthinhung");
+      name.style.top = parseInt(name.style.top) + 10 + "px";
+    }
+    function leftArrowFunction() {
+      var name = document.getElementById("huynhthinhung");
+      name.style.left = parseInt(name.style.left) - 10 + "px";
+    }
+    function rightArrowFunction() {
+      var name = document.getElementById("huynhthinhung");
+      name.style.left = parseInt(name.style.left) + 10 + "px";
+    }
+    function moveSelection(evt) {
+      switch (evt.keyCode) {
+        case 37:
+          leftArrowFunction();
+          break;
+        case 39:
+          rightArrowFunction();
+          break;
+        case 38:
+          upArrowFunction();
+          break;
+        case 40:
+          downArrowFunction();
+          break;
+      }
+    }
+    function docReady() {
+      window.addEventListener("keydown",moveSelection)
+    }
+  </script>
+
+</body>
+
+</html>
