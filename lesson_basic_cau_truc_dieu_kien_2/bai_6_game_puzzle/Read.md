@@ -6,17 +6,15 @@
 - Chiến thắng: Khi tất cả các mảnh ghép được sắp xếp đúng vị trí, trò chơi kết thúc.
 
 2. Phân tích các thành phần :
-
 - dữ liệu hình ảnh :
   + Mảng chứa các tên tệp hình ảnh cho từng mảnh ghép.
-  + Thông tin về kích thước và vị trí của từng mảnh ghép.
+- xử lý hiển thị ra được 5 hình ảnh ngẫu nhiên
+- xử lý 1 img hiển thị ra 3 hình ảnh ngẫu nhiên
+- nếu 5 phần ghép thành 1 hình ảnh con vật thì success;
 
-<!-- 
+- phân tích lưu đồ : Pseudo code
   Begin: 
-  input : click vào object img
-  sau khi input : thì hiện lên 1 hình ảnh khác xoay quanh 5 vòng
-  nếu điều kiện 5 vòng đúng i như trong 1 mảng đó thì điều kiện là true
-  nếu điện kiện không đúng là false;
-  hiển thị màn hình bằng thông báo
-  
- -->
+  - input : click vào mỗi phần tử img sẽ hiện lên 3 hình ảnh ngẫu nhiên
+  - sau khi click : hiện lên đủ 5 image thì kiểm tra đã đúng.
+   => hiển thị màn hình bằng thông báo
+  End.

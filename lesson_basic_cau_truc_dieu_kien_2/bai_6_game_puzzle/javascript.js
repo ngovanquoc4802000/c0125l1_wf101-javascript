@@ -30,6 +30,7 @@ var Images = {
     document.getElementById("img5"),
   ],
 };
+
 const { imgsDB, imageElements } = Images;
 
 function handleClickOne() {
@@ -46,6 +47,7 @@ function handleClickOne() {
     imageElements[0].src = `./image/${imageNames[i]}`;
   }
 }
+
 function handleClickTwo() {
   const imageNamesTwo = [
     imgsDB[0][1], // "funny-cat1_part2x1.jpg"
@@ -60,6 +62,7 @@ function handleClickTwo() {
     imageElements[1].src = `./image/${imageNamesTwo[i]}`;
   }
 }
+
 function handleClickThree() {
   const imageNamesThree = [imgsDB[0][2], imgsDB[1][2], imgsDB[2][2]];
   for (let i = imageNamesThree.length - 1; i > 0; i--) {
@@ -73,6 +76,7 @@ function handleClickThree() {
     imageElements[2].src = `./image/${imageNamesThree[i]}`;
   }
 }
+
 function handleClickFour() {
   const imageNamesFour = [imgsDB[0][3], imgsDB[1][3], imgsDB[2][3]];
   for (let i = imageNamesFour.length - 1; i > 0; i--) {
@@ -86,6 +90,7 @@ function handleClickFour() {
     imageElements[3].src = `./image/${imageNamesFour[i]}`;
   }
 }
+
 function handleClickFive() {
   const imageNamesFive = [imgsDB[0][4], imgsDB[1][4], imgsDB[2][4]];
   for (let i = imageNamesFive.length - 1; i > 0; i--) {
@@ -99,6 +104,7 @@ function handleClickFive() {
     imageElements[4].src = `./image/${imageNamesFive[i]}`;
   }
 }
+
 function fiveImageMathRandom() {
   for (let i = 0; i < 5; i++) {
     let var1 = Math.floor(Math.random() * 3);
