@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ứng dụng Do You Love Me</title>
+  <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    #yes, #no {
+        padding: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        margin: 10px;
+    }
+    #no {
+        background-color: red;
+        color: white;
+    }
+    #yes {
+        background-color: green;
+        color: white;
+    }
+</style>
+</head>
+
+<body>
+  <h1>Do You Love Me </h1>
+  <div id="yes">YES</div>
+    <div id="no">NO</div>
+  <script>
+       const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+
+        yesButton.addEventListener('click', () => {
+            alert("<3");
+        });
+
+        noButton.addEventListener("mouseover", () => {
+          const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth); 
+          const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+          noButton.style.position = "absolute";
+          noButton.style.left = randomX + "px";
+          noButton.style.top = randomY + "px" 
+        })
+  </script>
+</body>
+
+</html>
