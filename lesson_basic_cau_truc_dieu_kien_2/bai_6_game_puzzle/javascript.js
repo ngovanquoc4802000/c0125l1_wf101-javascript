@@ -1,118 +1,108 @@
 var Images = {
   imgsDB: [
-    [
-      "funny-cat1_part1x1.jpg",
-      "funny-cat1_part2x1.jpg",
-      "funny-cat1_part3x1.jpg",
-      "funny-cat1_part4x1.jpg",
-      "funny-cat1_part5x1.jpg",
-    ],
-    [
-      "monkey_part1x1.jpg",
-      "monkey_part2x1.jpg",
-      "monkey_part3x1.jpg",
-      "monkey_part4x1.jpg",
-      "monkey_part5x1.jpg",
-    ],
-    [
-      "panda_swap_part1x1.jpg",
-      "panda_swap_part2x1.jpg",
-      "panda_swap_part3x1.jpg",
-      "panda_swap_part4x1.jpg",
-      "panda_swap_part5x1.jpg",
-    ],
+      [
+          "funny-cat1_part1x1.jpg",
+          "funny-cat1_part2x1.jpg",
+          "funny-cat1_part3x1.jpg",
+          "funny-cat1_part4x1.jpg",
+          "funny-cat1_part5x1.jpg",
+      ],
+      [
+          "monkey_part1x1.jpg",
+          "monkey_part2x1.jpg",
+          "monkey_part3x1.jpg",
+          "monkey_part4x1.jpg",
+          "monkey_part5x1.jpg",
+      ],
+      [
+          "panda_swap_part1x1.jpg",
+          "panda_swap_part2x1.jpg",
+          "panda_swap_part3x1.jpg",
+          "panda_swap_part4x1.jpg",
+          "panda_swap_part5x1.jpg",
+      ],
   ],
   imageElements: [
-    document.getElementById("img1"),
-    document.getElementById("img2"),
-    document.getElementById("img3"),
-    document.getElementById("img4"),
-    document.getElementById("img5"),
+      document.getElementById("img1"),
+      document.getElementById("img2"),
+      document.getElementById("img3"),
+      document.getElementById("img4"),
+      document.getElementById("img5"),
   ],
 };
 
 const { imgsDB, imageElements } = Images;
+let clickedImages = [];
+let clickCount = 0;
+function checkWin() {
+  if (clickedImages.length === 5) {
+      const firstImage = clickedImages[0];
+      const allSame = clickedImages.every((img) => img === firstImage);
+      console.log(allSame)
+      if (allSame) {
+          document.getElementById("result").style.display = "block";
+      }
+  }
+}
 
 function handleClickOne() {
-  const imageNames = [
-    imgsDB[0][0], // "funny-cat1_part1x1.jpg"
-    imgsDB[1][0], // "monkey_part1x1.jpg"
-    imgsDB[2][0], // "panda_swap_part1x1.jpg"
-  ];
-  for (let i = imageNames.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [imageNames[i], imageNames[j]] = [imageNames[j], imageNames[i]];
-  }
-  for (let i = 0; i < 3; i++) {
-    imageElements[0].src = `./image/${imageNames[i]}`;
-  }
+  clickedImages[0] = changeImage(0, 0);
+  clickCount++;
+  checkWin();
+  
 }
 
 function handleClickTwo() {
-  const imageNamesTwo = [
-    imgsDB[0][1], // "funny-cat1_part2x1.jpg"
-    imgsDB[1][1], // "monkey_part2x1.jpg"
-    imgsDB[2][1], // "panda_swap_part2x1.jpg"
-  ];
-  for (let i = imageNamesTwo.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [imageNamesTwo[i], imageNamesTwo[j]] = [imageNamesTwo[j], imageNamesTwo[i]];
-  }
-  for (let i = 0; i < 3; i++) {
-    imageElements[1].src = `./image/${imageNamesTwo[i]}`;
-  }
+  clickedImages[1] = changeImage(1, 1);
+  clickCount++;
+  checkWin();
 }
 
 function handleClickThree() {
-  const imageNamesThree = [imgsDB[0][2], imgsDB[1][2], imgsDB[2][2]];
-  for (let i = imageNamesThree.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [imageNamesThree[i], imageNamesThree[j]] = [
-      imageNamesThree[j],
-      imageNamesThree[i],
-    ];
-  }
-  for (let i = 0; i < 3; i++) {
-    imageElements[2].src = `./image/${imageNamesThree[i]}`;
-  }
+  clickedImages[2] = changeImage(2, 2);
+  clickCount++;
+  checkWin();
 }
 
 function handleClickFour() {
-  const imageNamesFour = [imgsDB[0][3], imgsDB[1][3], imgsDB[2][3]];
-  for (let i = imageNamesFour.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [imageNamesFour[i], imageNamesFour[j]] = [
-      imageNamesFour[j],
-      imageNamesFour[i],
-    ];
-  }
-  for (let i = 0; i < 3; i++) {
-    imageElements[3].src = `./image/${imageNamesFour[i]}`;
-  }
+  clickedImages[3] = changeImage(3, 3);
+  clickCount++;
+  checkWin();
 }
 
 function handleClickFive() {
-  const imageNamesFive = [imgsDB[0][4], imgsDB[1][4], imgsDB[2][4]];
-  for (let i = imageNamesFive.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [imageNamesFive[i], imageNamesFive[j]] = [
-      imageNamesFive[j],
-      imageNamesFive[i],
-    ];
+  clickedImages[4] = changeImage(4, 4);
+  clickCount++;
+  checkWin();
+}
+
+function changeImage(elementIndex, imagePartIndex) {
+  const imageNames = [
+      imgsDB[0][imagePartIndex],
+      imgsDB[1][imagePartIndex],
+      imgsDB[2][imagePartIndex],
+  ];
+
+  for (let i = imageNames.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [imageNames[i], imageNames[j]] = [imageNames[j], imageNames[i]];
   }
-  for (let i = 0; i < 3; i++) {
-    imageElements[4].src = `./image/${imageNamesFive[i]}`;
-  }
+
+  const newImageSrc = `./image/${imageNames[0]}`;
+  imageElements[elementIndex].src = newImageSrc;
+  return newImageSrc;
 }
 
 function fiveImageMathRandom() {
   for (let i = 0; i < 5; i++) {
-    let var1 = Math.floor(Math.random() * 3);
-    let var2 = Math.floor(Math.random() * 5);
-   const imageSrc = `./image/${imgsDB[var1][var2]}`
-    imageElements[i].src = imageSrc;
+      let var1 = Math.floor(Math.random() * 3);
+      let var2 = Math.floor(Math.random() * 5);
+      const imageSrc = `./image/${imgsDB[var1][var2]}`;
+      imageElements[i].src = imageSrc;
+      clickedImages[i] = imageSrc;
   }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   fiveImageMathRandom();
 });
