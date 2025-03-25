@@ -34,14 +34,17 @@ var Images = {
 const { imgsDB, imageElements } = Images;
 let clickedImages = [];
 let clickCount = 0;
+
 function checkWin() {
+  // Kiểm tra nếu tất cả ảnh đã được click
   if (clickedImages.length === 5) {
-      const firstImage = clickedImages[0];
-      const allSame = clickedImages.every((img) => img === firstImage);
-      console.log(allSame)
-      if (allSame) {
-          document.getElementById("result").style.display = "block";
-      }
+    const firstImage = clickedImages[0]; // lấy ảnh đầu tiên
+    const allSame = clickedImages.every((img) => img === firstImage); // kiểm tra tất cả ảnh có giống nhau không
+    console.log(allSame);
+    if (allSame) {
+        // Nếu tất cả ảnh giống nhau, hiển thị thông báo thành công
+        document.getElementById("result").style.display = "block";
+    }
   }
 }
 
@@ -49,7 +52,6 @@ function handleClickOne() {
   clickedImages[0] = changeImage(0, 0);
   clickCount++;
   checkWin();
-  
 }
 
 function handleClickTwo() {
