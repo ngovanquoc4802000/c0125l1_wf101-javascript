@@ -100,3 +100,13 @@ function fiveImageMathRandom() {
 document.addEventListener("DOMContentLoaded", () => {
   fiveImageMathRandom();
 });
+
+
+let text = "";
+let i = 0;
+do {
+    text += "The number is " + i + "<br>";
+    i++;
+}
+while (i > 10);
+document.write(text);
