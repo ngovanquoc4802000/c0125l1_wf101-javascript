@@ -30,51 +30,44 @@ var Images = {
       document.getElementById("img5"),
   ],
 };
-
+var imageElementImg = document.querySelectorAll(".img");
 const { imgsDB, imageElements } = Images;
 let clickedImages = [];
-let clickCount = 0;
-
+/* Kiểm tra 5 bức bức ảnh chung 1 đối tượng thì báo border red */
 function checkWin() {
-  // Kiểm tra nếu tất cả ảnh đã được click
   if (clickedImages.length === 5) {
-    const firstImage = clickedImages[0]; // lấy ảnh đầu tiên
-    const allSame = clickedImages.every((img) => img === firstImage); // kiểm tra tất cả ảnh có giống nhau không
-    console.log(allSame);
-    if (allSame) {
-        // Nếu tất cả ảnh giống nhau, hiển thị thông báo thành công
-        document.getElementById("result").style.display = "block";
-    }
+      const firstImage = clickedImages[0];
+      const objectName = firstImage.split("_part")[0]; // Lấy tên đối tượng
+      const allSameObject = clickedImages.every(img => img.startsWith(objectName));
+      if (allSameObject) {
+        imageElementImg.forEach((item) => {
+          item.style.border = "4px solid red"
+        })
+      }
   }
 }
-
 function handleClickOne() {
   clickedImages[0] = changeImage(0, 0);
-  clickCount++;
   checkWin();
 }
 
 function handleClickTwo() {
   clickedImages[1] = changeImage(1, 1);
-  clickCount++;
   checkWin();
 }
 
 function handleClickThree() {
   clickedImages[2] = changeImage(2, 2);
-  clickCount++;
   checkWin();
 }
 
 function handleClickFour() {
   clickedImages[3] = changeImage(3, 3);
-  clickCount++;
   checkWin();
 }
 
 function handleClickFive() {
   clickedImages[4] = changeImage(4, 4);
-  clickCount++;
   checkWin();
 }
 
@@ -94,7 +87,6 @@ function changeImage(elementIndex, imagePartIndex) {
   imageElements[elementIndex].src = newImageSrc;
   return newImageSrc;
 }
-
 function fiveImageMathRandom() {
   for (let i = 0; i < 5; i++) {
       let var1 = Math.floor(Math.random() * 3);
