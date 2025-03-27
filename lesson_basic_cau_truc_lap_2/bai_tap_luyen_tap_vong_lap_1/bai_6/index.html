@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* bài 6: tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên */;
+  function sum30divide(number) {
+    let sum = 0;
+    for(let i = 7; i <= number;i++) {
+      if(i % 7 === 0) {
+        sum += i;
+        document.write(i + "<br/>");
+      }
+    }
+    return document.write("tổng của các con số là: " + sum + "<br/>");
+  }
+  console.log(sum30divide(210));
+  </script>
+</body>
+</html>

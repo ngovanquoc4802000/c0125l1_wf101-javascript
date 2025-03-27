@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="start" onclick="GameDoanso()">Bắt đầu</button>
+  <script>
+    
+    /* bài 8: game đoán số */
+    function GameDoanso() {
+      let promptFirst = parseInt(prompt("Bạn muốn đoán trong khoảng bao lâu"));
+      let MathRanDom = Math.floor(Math.random() * promptFirst);
+      let promptRandom = parseInt(prompt("Nhập số bạn muốn đoán"));
+      let count = 0;
+      while (MathRanDom !== promptRandom) {
+        count++;
+        if (count === 4) {
+          document.write("bạn đã hết số lần đoán");
+          document.getElementById("start").style.display = "none";
+          break;
+        } else if (promptFirst < MathRanDom) {
+          alert("số bạn nhỏ hơn")
+        } else {
+          alert("số bạn lớn hơn")
+        }
+        promptRandom  = prompt("Nhập số bạn đoán");
+      }
+      if (count === 4) {
+        alert("bạn hết số lần bạn đoán")
+      } else {
+        alert("Bạn đã đoán đúng")
+      }
+    }
+    GameDoanso()
+  </script>
+</body>
+
+</html>

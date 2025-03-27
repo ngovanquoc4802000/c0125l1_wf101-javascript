@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     /*  Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. 
+  Nhưng nếu số chia hết cho 3 thì in ra "Fizz",
+   5 thì in ra "Buzz" thay vì in ra số đó.
+    Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz". */
+  function FizzBuzz(numbers) {
+    let arrayThree = [];
+    let arrayFive = [];
+    let arrayThreeAndFive = [];
+    const count = 0;
+    let i = 1;
+    while(i <= numbers) {
+      if(i % 3 === 0 && i % 5 !== 0) {
+        arrayThree.push(i);
+      }
+      if(i % 5 === 0 && i % 3 !== 0) {
+        arrayFive.push(i)
+      }
+      if(i % 3 === 0 && i % 5 === 0) {
+        arrayThreeAndFive.push(i)
+      }
+      i++;
+    }
+    arrayThree.forEach((item) => document.write(`Fizz là: ${item} ` + "</br>"))
+    arrayFive.forEach((item) => document.write(`Bizz là: ${item} ` + "</br>"))
+    arrayFive.forEach((item) => document.write(`FizzBuzz là: ${item} ` + "</br>"))
+  }
+  console.log(FizzBuzz(100))
+  </script>
+</body>
+</html>

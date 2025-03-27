@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      /* bài 3:  Hiển thị ra 20 số trong dãy fibonacci đầu tiên. 
+    F(0) = 0
+    F(1) = 1
+    F(n) = F(n-1) + F(n-2) với n > 1
+    */
+    function show20Fibonacci(n) {
+      let fib = [0, 1];
+      for (let i = 2; i < n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+      }
+      return fib;
+    }
+   const result = show20Fibonacci();
+   console.log(result);
+  </script>
+</body>
+</html>

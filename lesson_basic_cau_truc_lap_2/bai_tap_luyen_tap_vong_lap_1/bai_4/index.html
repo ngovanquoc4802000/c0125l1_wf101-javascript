@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     /* bài 4: tìm số đầu tiên trong dãy fibonacci chia hết cho 5 */;
+   function findFibonacci() {
+    let findA = 0, findB = 1;
+    for(let i = 2; ;i++ ) {
+      let next = findA + findB;
+      if( next % 5 === 0) {
+        return next
+      }
+      findA = findB;
+      findB = next;
+    }
+   }
+  console.log(findFibonacci());
+  </script>
+</body>
+</html>
