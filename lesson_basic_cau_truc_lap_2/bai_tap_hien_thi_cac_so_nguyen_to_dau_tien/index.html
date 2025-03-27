@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiển thị các số nguyên tố đầu tien</title>
+</head>
+
+<body>
+  <script>
+    function checkNguyenTo(input) {
+      if (input <= 1) return false;
+      if (input <= 3) return true;
+      if (input % 2 === 0 || input % 3 === 0) return false;
+      let i = 5;
+      while (i * i < input) {
+        if (input % i === 0 || input & (i + 2) === 0)return false;
+        i += 6;
+      }
+      return true;
+    }
+    function first20Integer() {
+      let number = parseInt(prompt("Nhập vào số nguyên"));
+      let count = 0;
+      let n = 2;
+      while (count < number) {
+        if (checkNguyenTo(n)) {
+          document.write(n + "<br/>");
+          count++;
+        }
+        n++;
+      }
+    }
+    first20Integer()
+  </script>
+</body>
+
+</html>
