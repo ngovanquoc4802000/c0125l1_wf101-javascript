@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* Hình tam giác 1 */
+    for (let i = 1; i <= 5; i++) {
+      let result = "" + "<br>";
+      for (j = 1; j <= i; j++) {
+        result += "*"
+      }
+      document.write(result)
+    }
+    /* Hình tam giác 2 */
+    for (let i = 1; i <= 5; i++) {
+      let results = "" + "<br>";
+      for (let j = 6; j > i; j--) {
+        results += "*"
+      }
+      document.write(results)
+    }
+    /* Hình tam giác 3 */
+    for (let i = 1; i <= 5; i++) {
+      let startRight = "<br>" + "";
+      for (let j = 6; j > i; j--) {
+        startRight += "&nbsp;" + "&nbsp";
+      }
+      for (let z = 1; z <= i; z++) {
+        startRight += "*"
+      }
+      document.write(startRight)
+    }
+    /* Hình tam giác 4 */
+    for (let i = 1; i <= 5; i++) {
+      let startLeftNone = "<br>" + "";
+      for (let j = 1; j <= i; j++) {
+        startLeftNone += "&nbsp;" + "&nbsp";
+      }
+      for (let z = 6; z > i; z--) {
+        startLeftNone += "*"
+      }
+      document.write(startLeftNone)
+    }
+    /* Hình chữ nhật */
+    let rectangle = "";
+
+    for (let i = 0; i < 7; i++) {
+      if (i === 0 || i === 7 - 1) {
+        rectangle += "* ".repeat(10);
+      } else {
+        rectangle += "* " + "&nbsp;".repeat((10 - 2) * 3) + "*";
+      }
+      rectangle += "<br>";
+    }
+
+    document.write("<br>" + rectangle);
+    /* Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) 
+    khi biết số tiền ban đầu,
+     số tháng cho vay và lãi xuất hàng tháng. */
+    let value = parseFloat(prompt("Nhập số tiền gửi ngân hàng của bạn : ", 0));
+    function tienVietNam(input) {
+      if (isNaN(input) && input > 0) {
+        alert("không in ra tiền hoặc số tiền của bạn thấp quá");
+        return
+      }
+      if (input <= 1000) {
+        alert("số tiền này quí khách không đủ để sinh ra lãi, phải trên 1.000.000VND");
+        return;
+      }
+        /* tính công lãi kép theo tháng A = P x (1 + r/n) căn bậc 2 n*t 
+         A: Tổng số tiền sau thời gian gởi 
+         P : số tiền góc ban đầu
+         r : lãi suất hàng năm(dạng thập phân , ví dụ 5% = 0.05)
+         n : số lần ghép lãi trong 1 năm (ví dụ: hàng tháng n = 12; hàng quý n = 4; hàng năm n = 1)
+         t : số năm gửi, số tháng gửi 
+        */;
+      let sumMoneyMonth = input * Math.pow((1 + (5 / 100) / 12), 12);
+      let formattedMoney = sumMoneyMonth.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
+      return sumMoneyMonth > input ? document.write("Tổng số tiền được gửi 12 tháng là: " + formattedMoney) : document.write("Số tiền chưa có lãi");
+    }
+    tienVietNam(value);
+    /* Bài 6:  In Hình trái tim */
+    function veTraiTimKyTu() {
+  console.log("  ** ** ");
+  console.log(" ******* ");
+  console.log("*********");
+  console.log(" ******* ");
+  console.log("  ***** ");
+  console.log("   *** ");
+  console.log("    * ");
+}
+
+veTraiTimKyTu();
+  </script>
+</body>
+
+</html>
