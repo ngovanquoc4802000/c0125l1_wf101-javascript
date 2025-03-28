@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let value = parseInt(prompt("Enter a number: ",0));
+    let array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+    let index = -1;
+      function inputValue(param) {
+        for(let i = 0; i < param.length;i++) {
+          if(value == param[i]) {
+            index = i
+          }
+        }
+      }
+      inputValue(array);
+      if(index == -1) {
+        document.write("value" + value + "not found " + index)
+      } else {
+        document.write("value" + value + "đã tìm thấy" + index)
+      }
+  </script>
+</body>
+</html>
