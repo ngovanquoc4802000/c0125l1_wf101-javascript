@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* Bài 1: Nối các phần tử trong mảng thành chuỗi */
+    let myColor = ["Red", "Green", "White", "Black"].join(",");
+    document.write(myColor + "<br>")
+    /* Bai 2: Chèn dấu "-" giữa các số chẵn */
+    let array = ["0", "254", "6", "8"].join("-")
+    document.write(array + "<br>");
+    /* Bài 3: Chuyển đổi chữ thường sang chữ hoa và ngược lại */
+    
+    let myArray = "The Quick Brown Fox";
+    
+    let results = "";
+
+    for (let i = 0; i < myArray.length; i++) {
+      const charAt = myArray[i];
+      if (charAt >= 'a' && charAt <= 'z') {
+        results += charAt.toLocaleUpperCase();
+      } else if (charAt >= 'A' && charAt <= 'Z') {
+        results += charAt.toLocaleLowerCase();
+      } else {
+        results += charAt;
+      }
+    }
+    document.write(results);
+
+
+  </script>
+</body>
+
+</html>
