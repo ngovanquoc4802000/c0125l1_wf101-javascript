@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+      /* Bài 1
+         Viết chương trình khởi tạo một mảng số nguyên gồm 10 phần tử.
+         Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10. */
+    const array = [19, 29, 30, 5, 39, 23, 120, 43, 37, 76, 10, 9];
+    let currentIndex = 10;
+    const checkNumber = (arr) => {
+      for (let i = 0; i < arr.length; i++) {
+        if (array[i] >= currentIndex) {
+          document.write("Những số nguyên lớn hơn hoặc bằng 10: " + array[i] + "<br>");
+        } else if (array[i] <= currentIndex) {
+          document.write("Những số nguyên nhỏ hơn hoặc bằng 10 là:" + array[i] + "<br>")
+        }
+      }
+    }
+    checkNumber(array)
+  </script>
+</body>
+
+</html>

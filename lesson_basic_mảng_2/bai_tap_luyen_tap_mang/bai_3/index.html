@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* Bài 3
+      Viết chương trình khởi tạo một mảng số nguyên.
+      Hiển thị giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng. */
+    const array = [100, 200, 300, 400, 1200, 500, 600, 700, 800, 900, 1000, 1100];
+    let max = array[0];
+    let sum = 0;
+    function NumberLess(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+          max = arr[i]
+        }
+        sum += arr[i];
+      }
+      return sum / arr.length;
+    }
+   const result = NumberLess(array)
+    document.write("Giá trị lớn nhất trong mảng là : " + max + " Giá trị trung bình là: " + result)
+  </script>
+</body>
+
+</html>
