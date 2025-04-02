@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Caro Game Simple</h1>
+  <span id="text"></span><br>
+  <button style="margin-top: 1rem;" id="valueButton">Change Value</button>
+  <script>
+    /* hiện ra 1 cột dọc (.) từ 0 - 5 */
+    /* hiện ra 1 cột ngang (.) từ 0 - 5 */
+    /* input: Enter the position of x và  Enter the position of x */
+    /* logic: nếu người dùng gõ vị trí x và vị trí y thì hiện ra vị trí đó trong bàn cờ caro */
+    const textD = document.getElementById("text");
+    const valueBtn = document.getElementById("valueButton");
+    let results = "";
+    let array = [
+      ['(.)', '(.)', '(.)', '(.)', '(.)'],
+      ['(.)', '(.)', '(.)', '(.)', '(.)'],
+      ['(.)', '(.)', '(.)', '(.)', '(.)'],
+      ['(.)', '(.)', '(.)', '(.)', '(.)'],
+      ['(.)', '(.)', '(.)', '(.)', '(.)'],
+    ];
+    let count = 1;
+    // array[0][0] + array[0][1] + array[0][2] ....
+    for (let i = 0; i < 5; i++) {
+      results += '<br>';
+      for (let j = 0; j < 5; j++) {
+        results += array[i][j] + '&ensp;'
+      }
+    }
+    textD.innerHTML = results;
+    valueBtn.addEventListener("click", () => {
+      results = '' // duplicate code
+      let valueX = parseInt(prompt("Enter the position of x: "));
+      let valueY = parseInt(prompt("Enter the position of y: "));
+      if (count % 2 == 0) {
+        array[valueX][valueY] = "x";
+      } else {
+        array[valueX][valueY] = "o"
+      }
+      count++;
+      for (let i = 0; i < 5; i++) {
+        results += "<br>";
+        for (let j = 0; j < 5; j++) {
+          results += array[i][j] + "&ensp;" + "&ensp;" + "&ensp;"
+        }
+      }
+      textD.innerHTML = results;
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+          if (array[i][j] === 'x' && array[i][j + 1] === 'x' && array[i][j + 2] === 'x' ||
+            array[i][j] === 'x' && array[i + 1][j] === 'x' && array[i + 2][j] === 'x') {
+            alert("x Thắng");
+          } else if (array[i][j]  === 'o' && array[i][j + 1] === 'o' && array[i][j + 2] === 'o' ||
+            array[i][j] === 'o' && array[i + 1][j] === 'o' && array[i + 2][j] === 'o') {
+            alert("o Thắng");
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html> 
