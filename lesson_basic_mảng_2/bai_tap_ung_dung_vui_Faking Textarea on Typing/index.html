@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Type anthing slowly</h1>
+  <textarea style="width: 300px; height: 200px;" onkeydown="fnOnInput()" name="" value="" id="textarea"></textarea>
+  <script>
+    const array = ["T", "ô", 'i', " ", 'l', 'à', " ", 'n', 'g', 'ư', 'ờ', 'i', " ", 'c', 'h', 'i', 'ế', 'n', " ","s", "ĩ"];
+    console.log(array[0])
+    console.log(array[1])
+
+    let input = "";
+    let currentIndex = 0;
+
+    function fnOnInput() {
+      setTimeout(() => {
+        if (currentIndex < array.length) {
+          input += array[currentIndex];
+          ++currentIndex;
+          document.getElementById("textarea").value = input;
+        } 
+      }, 100)
+    }
+  </script>
+</body>
+
+</html>
