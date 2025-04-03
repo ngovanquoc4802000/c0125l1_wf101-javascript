@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử.
+       Nhập hoặc tạo một phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không.
+       Nếu V thuộc mảng, xóa V khỏi mảng (dịch các phần tử bên phải V sang vị trí của V và gán 0 cho phần tử cuối cùng của mảng). */
+    function checkSoNguyen() {
+      const value = parseInt(prompt("hãy nhập sô vào đây"))
+      const array = [21, 23, 54, 67, 22, 64, 52, 11, 45, 34, 20];
+      let count = 0;
+      let index = -1;
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === value) {
+          count = i;
+          index = i;
+          break;
+        }
+      }
+      if (index == -1) {
+        document.write("V không thuộc mảng");
+        return;
+      } else {
+        document.write("V thuộc mảng: " + array[count] + " Nằm vị trí: " + index);
+        array.splice(index,1);
+        array.push(0);
+        document.write(" mảng còn lại bao gồm: " + array)
+      }
+      return value;
+    };
+    checkSoNguyen()
+  </script>
+</body>
+
+</html>

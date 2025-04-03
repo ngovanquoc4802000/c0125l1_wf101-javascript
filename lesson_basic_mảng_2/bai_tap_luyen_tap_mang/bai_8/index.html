@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 
+    Bài 8
+    Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. 
+    Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị mảng đã được sắp xếp.
+    */
+   function reversedString(value) {
+    let string = "";
+    for(let i = value.length -1; i >= 0 ; i--) {
+       string += value[i]
+    }
+    return string;
+   }
+   function display() {
+    let value =  prompt('Nhập 10 số bất kì vào đây: ');
+    let displayInner = reversedString(value);
+    document.write(displayInner);
+   }
+   display()
+  </script>
+</body>
+</html>

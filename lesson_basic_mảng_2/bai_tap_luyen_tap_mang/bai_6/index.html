@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <script>
+      /* Bài 6: Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. 
+         Nhập hoặc tạo một phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng không.
+         Nếu V thuộc mảng, in ra: "V is in the array".
+         Nếu không, in ra: "V is not in the array". */
+         const checkMangSoNguyen = () => {
+          let input = parseInt(prompt("Nhập vào 1 chuỗi: "))
+          const array = [12,56,32,23,57,100,24,57,89,13];
+          let Vboolean = false;
+          for(let i = 0 ; i < array.length;i++) {
+              if(array[i] === input) {
+                Vboolean = true;
+                 break;
+              }
+          }
+          if(Vboolean) {
+            return alert("V is an the array")
+          } else {
+            return alert("V is not in the array")
+          }
+         }
+         checkMangSoNguyen()
+   </script>
+</body>
+</html>

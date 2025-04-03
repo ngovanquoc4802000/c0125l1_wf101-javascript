@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+  /*
+  Bài 9
+  Viết chương trình khởi tạo hoặc nhập vào hai mảng số nguyên gồm 10 phần tử (gọi là mảng a và b).
+
+  Tạo mảng c gồm 20 phần tử.
+  Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
+  Hiển thị mảng c.
+  */
+  function checkTwoConcat(a, b) {
+    const pushA = [];
+    const pushB = [];
+    pushA.push(a);
+    pushB.push(b)
+    return pushA.concat(pushB);
+  }
+  function display() {
+    let valueA = parseInt(prompt("Nhập vào mảng A: "));
+    let valueB = parseInt(prompt('Nhập vào mảng B: '))
+    const c = [];
+    const result = checkTwoConcat(valueA, valueB);
+    c.push(result);
+    document.write("Hiển thị ra mảng C: " + c);
+  }
+  display();
+</script>
+
+</html>

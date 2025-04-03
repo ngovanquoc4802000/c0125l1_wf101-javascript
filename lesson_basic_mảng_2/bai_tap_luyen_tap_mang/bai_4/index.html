@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* Bài 4
+    Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng. */
+    const value = prompt("Hãy nhập 1 mảng bao gồm các số nguyên bạn sẽ thấy mảng đảo ngược", 0);
+    const arrValue = value.split(",").map((item) => parseInt(item.trim())); // Chuyển đổi chuỗi thành mảng số nguyên
+    function arrayReverse(str) {
+      let reversed = "";
+      for (let i = str.length; i >= 0; i--) {
+        reversed += str[i]
+      }
+      return reversed;
+    }
+    const result = arrayReverse(arrValue);
+    console.log(result);
+
+  </script>
+</body>
+
+</html>
