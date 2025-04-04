@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 
+    Bài 3:
+    Tạo hàm nhận vào hai tham số:
+    Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng.
+    Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.
+    */
+   function compareTwo(inputA,inputB) {
+        if(inputA > inputB) {
+          document.write("số thứ nhất lớn hơn số thứ 2")
+        }  else {
+          let result = inputA + inputB
+          return document.write(result);
+        }
+   }
+   function display() {
+    const valueA = parseInt(prompt("Nhập vào số a: ",0))
+    const valueB = parseInt(prompt("Nhập vào số b: ",0))
+    compareTwo(valueA,valueB); 
+  }
+   display()
+  </script>
+</body>
+</html>

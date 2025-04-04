@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    const peopleStar = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+    let index = -1;
+    function checkStar(input) {
+      for (let i = 0; i < star.length; i++) {
+        if (star[i] === input) {
+          index = i;
+        }
+      }
+      return input;
+    }
+    function updateStar() {
+      const value = prompt("Hãy nhập ngôi sao bạn muốn tìm");
+      const result = checkStar(value);
+      if(index == -1) {
+        document.write("không tìm thấy ngôi sao")
+      } else {
+        document.write("Ngôi sao này thuộc nhóm " + peopleStar[index])
+      }
+    }
+    updateStar();
+  </script>
+</body>
+
+</html>
