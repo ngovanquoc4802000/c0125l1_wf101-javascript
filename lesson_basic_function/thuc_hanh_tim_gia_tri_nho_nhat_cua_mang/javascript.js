@@ -14,3 +14,17 @@ function display() {
   document.write(result);
 }
 display();
+
+/* function swap(a, b) {
+var temp = a;
+a = b;
+b = temp;
+}
+
+var a = 5;
+var b = 10;
+swap(a, b);
+document.write("a = " + a + ", b = " + b); 
+====> nếu là tham trị thì sẽ không hoán đổi ngược được
+====> nếu là tham chiếu sẽ hoán đổi được
+*/
