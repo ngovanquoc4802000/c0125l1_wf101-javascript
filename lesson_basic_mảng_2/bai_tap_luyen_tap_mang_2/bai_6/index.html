@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* Bài 6:
+       Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự '-'
+       trong mảng và thay thế chúng bằng ký tự '_'.
+        */
+    function checkFindArray(array) {
+      let find = false;
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === "-") {
+          array[i] = "_";
+          find = true;
+        }
+      }
+      return find;
+    }
+    function display() {
+      const array = [12, 23, "-", 98, 23, "-", "ở đây"];
+      const result = checkFindArray(array);
+      if (result) {
+        document.write("Đã tìm thấy và thay thế.");
+        document.write("<br>Mảng sau khi thay thế: " + array); // Hiển thị mảng đã thay đổi
+      } else {
+        document.write("Chưa tìm thấy '-'")
+      }
+    }
+    display();
+  </script>
+</body>
+
+</html>

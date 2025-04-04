@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* Viết chương trình khai báo một mảng ký tự và kích thước của mảng.
+       Yêu cầu: Đếm số ký tự số (0-9) trong mảng. */
+    function countDigitsInArray(charArray) {
+      let count = 0;
+      for (let i = 0; i < charArray.length; i++) {
+        if (charArray[i] >= '0' && charArray[i] <= '9') {
+          count++;
+        }
+      }
+      return count;
+    }
+    function display() {
+      const charArray = ['a', 'b', '1', '2', 'c', '3', '4', 'd', '5', 'e', '6', '7', '8', '9', '0'];
+      const digitCount = countDigitsInArray(charArray);
+      console.log(`Số ký tự số trong mảng là: ${digitCount}`);
+    }
+    display();
+  </script>
+</body>
+
+</html>
