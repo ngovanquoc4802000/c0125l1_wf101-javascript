@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <table border="1px">
+    <thead>
+        <tr>
+          <td>Quốc</td>
+          <td>Dương</td>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="inbox-quoc">
+          <input placeholder="soạn tin nhắn quoc" onchange="quocSendDuong()" type="text" id="quoc">
+        </td>
+        <td id="inbox-duong">
+          <input placeholder="soạn tin nhắn duong" onchange=" duongSendQuoc()" name="quoc" type="text" id="duong">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    /* Lập trình hướng đối tượng OOP
+       - Tên lớp  ==> Hình chữ nhật
+       - Thuộc tính ==> chiều rộng và chiều dài
+       - Phương thức ==> tính chiều rộng và chiều dài
+    */
+    /*
+      vd về lớp :  Book
+
+      vd 1 : Xây dựng lớp mô tả hình chữ nhật
+      class Rectangle {
+        constructor(width,height) {
+          this.length = width;
+          this.width = height;
+        }
+        getP() {
+        return (this.length * this.width) * 2;
+        }
+        getS() {
+        return this.length + this.width
+        }
+
+      } 
+      // tạo mới đối tượng
+      const calculator = new Rectangle(10,20);
+      //tên đối tượng và tên phương thức
+      calculator.getP();
+      calculator.getS();
+
+      vd: sơ đồ lớp về điện thoại: 
+      tên: Mobile
+      thuộc tính : 
+        + trạng thái pin tối đa 100
+        + Vùng nhớ :
+          + tin nhắn đang soạn thảo
+          + Hộp thư đến(inbox)
+          + Tin nhắn đã gửi
+      Phương thức : 
+        + Kiểm tra trạng thái điện thoại(bật/tắt)
+        + Bật và tắt điện thoại
+        + Sạc pin
+        + Soạn Tin nhắn
+        + Gửi tin nhắn tới 1 chiếc Mobile khác
+        + Nhận tin nhắn từ 1 chiếc Mobile khác
+        + Xem tin nhắn trong hộp thư đến
+        + Xem tin nhắn đã gửi
+  
+        Thực hành:
+        class Mobile {
+          constructor() {
+          this.pin = 100;
+          this.message = [];
+          this.send = 1;
+          this.dagui = [];
+          }
+          
+        }
+    */
+  
+  </script>
+</body>
+
+<script src="Mobile.js"></script>
+<script src="Main.js"></script>
+</html>
