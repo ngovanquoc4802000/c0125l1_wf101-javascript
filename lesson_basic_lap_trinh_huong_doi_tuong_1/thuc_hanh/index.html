@@ -36,15 +36,15 @@
       }
 
       isMale() {
-        return this.gender;
+        return this.gender === true;
       }
 
       setGender(gender) {
         this.gender = gender;
       }
 
-      eat(apple) {
-
+      eatApple(apple) {
+        this.apple.decrease();
         this.weight++;
         document.write(`${this.name} is eating an apple`)
       }
@@ -69,6 +69,8 @@
         return this.weight = weight;
       }
     }
+    let fanOne = new Human("fanOne", true, 10, huManOne);
+    let fanTwo = new Human("fanTwo", false, 10, huManTwo);
   </script>
 </body>
 
