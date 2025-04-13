@@ -9,8 +9,9 @@
 
 <body>
   <script>
+
     class Mouse {
-      constructor(name,weight,speed) {
+      constructor(name, weight, speed) {
         this.name = name;
         this.weight = weight;
         this.speed = speed;
@@ -22,21 +23,22 @@
     }
 
     class Cat {
-      constructor(name,weight,speed) {
+      constructor(name, weight, speed) {
         this.name = name;
         this.weight = weight;
         this.speed = speed;
       }
       makeSound() {
         document.write("meo meo");
+        return;
       }
       catchMouse(go) {
         if (go.status === "alive" && this.speed > go.speed) {
-          console.log(`${this.name} đã bắt được chuột ${rat.name}.`);
+          console.log(`${this.name} đã bắt được chuột ${go.name}.`);
         } else if (go.status !== "alive") {
           console.log(`Không thể bắt chuột ${go.name} vì nó đã chết.`);
+          return false;
         }
-        return false;
       }
       eatMouse(eat) {
         if (eat.status === "alive") {
@@ -44,18 +46,21 @@
           this.weight += eat.weight;
           eat.status = "dead";
           console.log(`${this.name} đã ăn xong. Cân nặng hiện tại là ${this.weight}.`);
+          return;
         } else {
           console.log(`${this.name} không ăn chuột chết.`);
+          return
         }
       }
     }
     const jerry = new Mouse("Jerry", 0.2, 10);
     const tom = new Cat("Tom", 5, 30);
-  
+
     jerry.makeSound();
-    tom.makeSound();  
-    console.log(tom.eatMouse(jerry)) // xong roiof nhe
-    
+    tom.makeSound();
+    console.log(tom.catchMouse(jerry))
+    console.log(tom.eatMouse(jerry))
+
   </script>
 </body>
 
