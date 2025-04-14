@@ -9,26 +9,32 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="add-product">
-      <h2>Thêm sản phẩm mới</h2>
-      <input type="text" id="textCreate" placeholder="Tên sản phẩm mới">
-      <button  onclick="createList()">Thêm</button>
+  <h2>Quản lý sản phẩm</h2>
+
+    <div id="add-form">
+        <input type="text" id="idCategory" placeholder="ID">
+        <input type="text" id="name" placeholder="Tên sản phẩm" required>
+        <input type="number" id="price" placeholder="Giá" min="0" required>
+        <input type="number" id="number" placeholder="Số lượng" min="0" required>
+        <button onclick="createList()">Thêm sản phẩm</button>
     </div>
-    <div class="product-list">
-      <h2>Hiển thị tất cả sản phẩm</h2>
-      <p><span id="countPrice"></span> sản phẩm</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Tên sản phẩm</th>
-            <th>Hành động</th>
-          </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
+
+    <div id="product-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+        <p id="product-count">Tổng số sản phẩm: <span id="countPrice">0</span></p>
     </div>
-  </div>
 </body>
 <script src="javascript.js"></script>
 

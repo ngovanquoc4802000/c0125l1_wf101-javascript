@@ -1,5 +1,5 @@
 let count = 2;
-const array = ["Sony Xperia", "Samsung Galaxy"];
+const array = [];
 
 function addList() {
   const tbody = document.getElementById("tbody");
@@ -7,12 +7,15 @@ function addList() {
   for (let i = 0; i < array.length; i++) {
     result += `
       <tr>
-        <td id="classis-${i}">${array[i]}</td>
-        <td>
-          <button onClick="startUpdate(${i})" class="edit">Sửa</button>
-          <button onClick="handleDelete(${i})" class="delete">Xóa</button>
-        </td>
-      </tr>
+                        <td id="classis-id-${i}">${array[i].id}</td>
+                        <td id="classis-name-${i}">${array[i].name}</td>
+                        <td id="classis-price-${i}">${array[i].price}</td>
+                        <td id="classis-number-${i}">${array[i].number}</td>
+                        <td>
+                            <button onClick="startUpdate(${i})" class="edit">Sửa</button>
+                            <button onClick="handleDelete(${i})" class="delete">Xóa</button>
+                        </td>
+                    </tr>
     `;
   }
   tbody.innerHTML = result;
@@ -22,8 +25,17 @@ function addList() {
 addList();
 
 function createList() {
-  let text = document.getElementById("textCreate").value;
-  array.unshift(text);
+  let id = document.getElementById("idCategory").value;
+  let name = document.getElementById("name").value;
+  let price = document.getElementById("price").value;
+  let number = document.getElementById("number").value;
+  let newArray = {
+    id: id,
+    name: name,
+    price: price,
+    number,
+  };
+  array.unshift(newArray);
   count++;
   addList();
   return text;
@@ -40,7 +52,7 @@ function startUpdate(index) {
 }
 
 function saveUpdate(index) {
-  const input = document.getElementById(`updateInput-${index}`).value.trim(); // Lấy giá trị và loại bỏ khoảng trắng
+  const input = document.getElementById(`updateInput-${index}`).value;
 
   if (input !== "") {
     array[index] = input;
@@ -49,7 +61,7 @@ function saveUpdate(index) {
 }
 
 function cancelUpdate() {
-  addList(); // Re-render the list to cancel the update
+  addList();
 }
 
 function handleDelete(index) {
