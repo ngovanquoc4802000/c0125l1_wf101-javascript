@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="200px" height="200px">Hình chữ nhật</canvas>
+   <script>
+        class Rectangle {
+          constructor(height,weight)   {
+            this.height = height;
+            this.weight = weight
+          }
+          getDienTichHCN() {
+            return this.weight * this.height;
+          }
+          getChuviHCN() {
+            return (this.height + this.weight) * 2
+          } 
+          draw(ctx,x,y,color) {
+           ctx.fillStyle = color;
+           ctx.fillRect(x,y,this.weight,this.height)
+          }
+        }
+        const canvas = document.getElementById("myCanvas");
+        
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = 300;
+        canvas.height = 200;  
+
+        const myRectangle = new Rectangle(70,100);
+        myRectangle.draw(ctx,50,50,"#fa4b2a");
+        const div = document.createElement("div");
+        div.textContent = `diện tích: ${myRectangle.getDienTichHCN()}, chu vi: ${myRectangle.getChuviHCN()}`;
+        document.body.appendChild(div)
+   </script>
+</body>
+</html>
