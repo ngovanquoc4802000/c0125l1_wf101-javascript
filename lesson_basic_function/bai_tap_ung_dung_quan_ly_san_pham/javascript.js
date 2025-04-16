@@ -7,15 +7,15 @@ function addList() {
   for (let i = 0; i < array.length; i++) {
     result += `
       <tr>
-                        <td id="classis-id-${i}">${array[i].id}</td>
-                        <td id="classis-name-${i}">${array[i].name}</td>
-                        <td id="classis-price-${i}">${array[i].price}</td>
-                        <td id="classis-number-${i}">${array[i].number}</td>
-                        <td>
-                            <button onClick="startUpdate(${i})" class="edit">Sửa</button>
-                            <button onClick="handleDelete(${i})" class="delete">Xóa</button>
-                        </td>
-                    </tr>
+          <td id="classis-id-${i}">${array[i].id}</td>
+          <td id="classis-name-${i}">${array[i].name}</td>
+          <td id="classis-price-${i}">${array[i].price}</td>
+          <td id="classis-number-${i}">${array[i].number}</td>
+          <td>
+          <button onClick="startUpdate(${i})" class="edit">Sửa</button>
+          <button onClick="handleDelete(${i})" class="delete">Xóa</button>
+              </td>
+              </tr>
     `;
   }
   tbody.innerHTML = result;
